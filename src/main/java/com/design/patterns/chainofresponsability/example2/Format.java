@@ -4,5 +4,6 @@ public enum Format {
 
         XML,
         CSV,
-        PERCENT;
+        PERCENT,
+        NONE;
 }

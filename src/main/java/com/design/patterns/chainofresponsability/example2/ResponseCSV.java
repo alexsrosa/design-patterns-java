@@ -7,7 +7,7 @@ public class ResponseCSV implements Response {
     public String response(Request req, Account account) {
 
         if (!req.getFormat().equals(Format.CSV))
-            return this.next.response(req,account);
+            return this.next != null ? this.next.response(req,account) : "";
 
         return account.getHolder()+ ","+ account.getBalance();
     }

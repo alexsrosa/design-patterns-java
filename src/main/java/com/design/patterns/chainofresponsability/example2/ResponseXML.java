@@ -9,7 +9,7 @@ public class ResponseXML implements Response {
     public String response(Request req, Account account) {
 
         if(!req.getFormat().equals(Format.XML))
-            return this.next.response(req, account);
+            return this.next != null ? this.next.response(req, account) : "";
 
         return new XStream().toXML(account);
     }

@@ -43,4 +43,14 @@ public class ConverterTest {
         String run = Converter.run(request,account);
         assertEquals(run, "holder for the account%2000.0");
     }
+
+    @Test
+    public void convertToNoneTest(){
+
+        Request request = new Request(Format.NONE);
+        String run = Converter.run(request,account);
+        System.out.println(run);
+        assertEquals(run, "");
+    }
+
 }
