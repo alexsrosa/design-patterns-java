@@ -3,7 +3,7 @@ package com.design.patterns.chainofresponsability.example1;
 public class DiscountCalculator {
 
     public double calculator(Budget budget) {
-        Discount d1 = new DiscountForMoreThanFiveItems ();
+        Discount d1 = new DiscountForMoreThanFiveItems();
         Discount d2 = new DiscountForMoreThanFiveHundred();
         Discount d3 = new DiscountByMarriedSale();
         Discount dFim = new NoDiscount();

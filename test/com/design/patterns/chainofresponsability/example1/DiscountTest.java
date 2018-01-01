@@ -10,7 +10,7 @@ public class DiscountTest {
     private DiscountCalculator discountCalculator;
 
     @BeforeEach
-    public void beforeAll(){
+    public void beforeEach(){
         discountCalculator = new DiscountCalculator();
     }
 
