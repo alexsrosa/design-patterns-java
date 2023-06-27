@@ -8,19 +8,74 @@
     <artifactId>design-patterns-java</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>20</java.version>
+        <java.maven.version>20</java.maven.version>
+        <maven.compiler.source>${java.maven.version}</maven.compiler.source>
+        <maven.compiler.target>${java.maven.version}</maven.compiler.target>
+
+        <xstream.version>1.4.20</xstream.version>
+        <lombok.version>1.18.28</lombok.version>
+        <junit.version>5.9.3</junit.version>
+    </properties>
+
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.2</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.9</version>
+            <version>${xstream.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
-    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+
+                <configuration>
+                    <includes>
+                        <include>**/*_UT.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/BaseTest.java</exclude>
+                        <exclude>**/TestsUtil.java</exclude>
+                    </excludes>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
