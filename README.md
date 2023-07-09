@@ -4,5 +4,6 @@
 
 
 ## [Chain of Responsibility](src/main/java/study/design/patterns/chainofresponsability/README.md)
-## [Strategy](src/main/java/study/design/patterns/strategy/README.md)
 ## [Decorator](src/main/java/study/design/patterns/decorator/README.md)
+## [Singleton](src/main/java/study/design/patterns/singleton/README.md)
+## [Strategy](src/main/java/study/design/patterns/strategy/README.md)
